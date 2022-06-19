@@ -5,7 +5,6 @@ function App() {
   const [textDirty, setTextDirty] = useState(false);
   const [textError, setTextError] = useState("Поле ввода не может быть пустым");
   const [isEmpty, setIsEmpty] = useState("");
-  const [disabled, setDisabled] = useState(true)
 
   const textHandler = (e) => {
     setText(e.target.value);
@@ -49,7 +48,7 @@ function App() {
             name="name"
             type="text"
           />
-          <button  className={disabled ? '' : 'btn'} disabled ={disabled} onClick={handleClick} type="submit">
+          <button  className={!text ? '' : 'btn'} disabled ={!text} onClick={handleClick} type="submit">
             Отправить
           </button>
         </form>
